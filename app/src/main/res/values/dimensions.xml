@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textNormalSize">16sp</dimen>
+    <dimen name="textBigSize">34sp</dimen>
+    <dimen name="textSmallSize">11sp</dimen>
+    <dimen name="textBigBigSize">54sp</dimen>
+
+    <dimen name="inputNormalHeight">48sp</dimen>
+    <dimen name="inputNormalWidth">320sp</dimen>
+    <dimen name="inputSmallWidth">220sp</dimen>
+
+    <dimen name="inputNormalMargins">32sp</dimen>
+    <dimen name="inputSmallMargins">12sp</dimen>
+    <dimen name="inputSmallMarginsVertical">8sp</dimen>
+
+    <dimen name="homeOptionHeight">102sp</dimen>
+</resources>

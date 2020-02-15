@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">GlucoApp</string>
+
+    <string name="title_activity_register">Nuevo usuario</string>
+    <string name="title_activity_profile">Mi usuario</string>
+    <string name="title_activity_maps">Hospitales cercanos</string>
+    <string name="title_activity_newdata">Nueva muestra</string>
+    <string name="title_activity_myData">Mi historial</string>
+
+    <!-- LOGIN -->
+    <string name="input_email">Email</string>
+    <string name="input_password">Password</string>
+    <string name="lbl_registrar">Eres nuevo? Registrate aquí</string>
+    <string name="btn_ingresar">Ingresar</string>
+
+    <!-- REGISTER / MY DATA -->
+    <string name="input_name">Nombres</string>
+    <string name="input_lastname">Apellidos</string>
+    <string name="input_typeDiabetes">Tipo de diabetes</string>
+    <string name="input_gender">Sexo</string>
+    <string name="input_date">Fecha de nacimiento</string>
+
+    <string name="btn_registrar">Registrar</string>
+    <string name="btn_modificar">Modificar</string>
+
+    <string-array name="inputs_typeDiabetes">
+        <item>Tipo de diabetes...</item>
+        <item>Tipo 1</item>
+        <item>Tipo 2</item>
+    </string-array>
+    <string-array name="inputs_gender">
+        <item>Sexo...</item>
+        <item>Masculino</item>
+        <item>Femenino</item>
+    </string-array>
+
+    <!-- HOME -->
+    <string name="lbl_bienvenido">Bienvenido </string>
+
+    <string name="option_nuevaMuestra">Tomar nueva muestra</string>
+    <string name="option_historial">Ver mi historial</string>
+    <string name="option_hospitalesCercanos">Hospitales cercanos</string>
+
+    <string name="menu_perfil">Mi perfil</string>
+    <string name="menu_salir">Salir X</string>
+
+</resources>

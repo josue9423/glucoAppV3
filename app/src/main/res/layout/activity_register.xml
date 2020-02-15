@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.register.RegisterActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBarRegister"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_progressbar"
+        android:elevation="100dp"
+        android:indeterminateTint="@color/colorPrimaryDark"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <EditText
+            android:id="@+id/input_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/inputNormalHeight"
+            android:layout_marginStart="@dimen/inputNormalMargins"
+            android:layout_marginEnd="@dimen/inputNormalMargins"
+            android:background="@drawable/bg_input"
+            android:hint="@string/input_email"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorBeautyBlack"
+            android:textColorHint="@color/colorGray"
+            android:textSize="@dimen/textNormalSize" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/inputNormalHeight"
+                android:layout_marginStart="@dimen/inputNormalMargins"
+                android:layout_marginEnd="@dimen/inputNormalMargins"
+                android:background="@drawable/bg_input"
+                android:hint="@string/input_password"
+                android:inputType="textPassword"
+                android:textColor="@color/colorBeautyBlack"
+                android:textColorHint="@color/colorGray"
+                android:textSize="@dimen/textNormalSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btn_unlockPassword"
+                android:layout_width="24dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/input_password"
+                app:layout_constraintEnd_toEndOf="@+id/input_password"
+                app:layout_constraintHorizontal_bias="0.947"
+                app:layout_constraintStart_toStartOf="@+id/input_password"
+                app:layout_constraintTop_toTopOf="@+id/input_password" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/input_nombres"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/inputNormalHeight"
+            android:layout_marginStart="@dimen/inputNormalMargins"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/inputNormalMargins"
+            android:background="@drawable/bg_input"
+            android:hint="@string/input_name"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorBeautyBlack"
+            android:textColorHint="@color/colorGray"
+            android:textSize="@dimen/textNormalSize" />
+
+        <EditText
+            android:id="@+id/input_apellidos"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/inputNormalHeight"
+            android:layout_marginStart="@dimen/inputNormalMargins"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/inputNormalMargins"
+            android:background="@drawable/bg_input"
+            android:hint="@string/input_lastname"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorBeautyBlack"
+            android:textColorHint="@color/colorGray"
+            android:textSize="@dimen/textNormalSize" />
+
+        <Spinner
+            android:id="@+id/spinner_typeDiabetes"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/inputNormalHeight"
+            android:layout_marginStart="@dimen/inputNormalMargins"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/inputNormalMargins"
+            android:background="@drawable/bg_input_spinner"
+            android:spinnerMode="dialog"
+            android:textColor="@color/colorBeautyBlack"
+            android:textSize="@dimen/textNormalSize" />
+
+        <Spinner
+            android:id="@+id/spinner_gender"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/inputNormalHeight"
+            android:layout_marginStart="@dimen/inputNormalMargins"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/inputNormalMargins"
+            android:background="@drawable/bg_input_spinner"
+            android:spinnerMode="dialog"
+            android:textColor="@color/colorBeautyBlack"
+            android:textSize="@dimen/textNormalSize" />
+
+        <EditText
+            android:id="@+id/input_date"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/inputNormalHeight"
+            android:layout_marginStart="@dimen/inputNormalMargins"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/inputNormalMargins"
+            android:background="@drawable/bg_input"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="@string/input_date"
+            android:importantForAutofill="no"
+            android:inputType="date"
+            android:maxLines="1"
+            android:textColor="@color/colorBeautyBlack"
+            android:textColorHint="@color/colorGray"
+            android:textSize="@dimen/textNormalSize"/>
+
+        <Button
+            android:id="@+id/btn_registrar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/inputNormalHeight"
+            android:layout_marginStart="@dimen/inputNormalMargins"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="@dimen/inputNormalMargins"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/bg_btn_primary"
+            android:text="@string/btn_registrar"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/textNormalSize" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
