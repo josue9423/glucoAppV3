@@ -7,9 +7,10 @@ import com.glucoapp.data.entities.Glucosa;
 import com.glucoapp.data.entities.User;
 import com.glucoapp.data.repositories.firebase.Authentication;
 import com.glucoapp.data.repositories.firebase.Datastore;
-import com.glucoapp.data.repositories.firebase.Listener;
+import com.glucoapp.data.repositories.firebase.ListenerUser;
 import com.glucoapp.data.repositories.firebase.ListenerGlucosa;
 import com.glucoapp.data.utils.Constants;
+import com.glucoapp.data.utils.Utils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
@@ -28,13 +29,13 @@ public class DatastoreImpl implements Datastore {
     FirebaseFirestore mFirebase;
 
     /* Se declaran las interfaces.*/
-    private Listener listener;
+    private ListenerUser listenerUser;
     private ListenerGlucosa listenerGlucosa;
     private int statusValue = Constants.CERO_VALUE;
 
-    public DatastoreImpl(Listener listener) {
+    public DatastoreImpl(ListenerUser listenerUser) {
         this.mFirebase = FirebaseFirestore.getInstance();
-        this.listener = listener;
+        this.listenerUser = listenerUser;
     }
 
     public DatastoreImpl(ListenerGlucosa listenerGlucosa) {
@@ -49,10 +50,10 @@ public class DatastoreImpl implements Datastore {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    listener.onSuccess();
+                    listenerUser.onSuccess();
                 } else {
                     if (task.getException() != null) {
-                        listener.onError(task.getException().getMessage());
+                        listenerUser.onError(task.getException().getMessage());
                     }
                 }
 
@@ -69,13 +70,32 @@ public class DatastoreImpl implements Datastore {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        listener.onSuccessCurrentUser(document.toObject(User.class));
+                        listenerUser.onSuccessCurrentUser(document.toObject(User.class));
 
                     } else {
-                        listener.onError(task.getException().getMessage());
+                        listenerUser.onError(task.getException().getMessage());
                     }
                 } else {
-                    listener.onError(task.getException().getMessage());
+                    listenerUser.onError(task.getException().getMessage());
+                }
+            }
+        });
+    }
+
+    @Override
+    public void saveGlucoData(Glucosa glucosa) {
+        Authentication authentication = new AuthenticationImpl();
+        String uid = authentication.isExistingUser();
+        String document = Utils.convertDateToDocumentId(glucosa.getFecha());
+        mFirebase.collection(Constants.COLECTION_USER).document(uid).collection(Constants.COLECTION_DATA).document(document).set(glucosa).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    listenerGlucosa.onSuccessSaveGlucoData();
+                } else {
+                    if (task.getException() != null) {
+                        listenerGlucosa.onError(task.getException().getMessage());
+                    }
                 }
             }
         });
@@ -123,13 +143,14 @@ public class DatastoreImpl implements Datastore {
                         }
                         listenerGlucosa.onSuccessGetMounthlyData(listaGlucosa);
                     } else {
-                        listener.onError(task.getException().getMessage());
+                        listenerUser.onError(task.getException().getMessage());
                     }
                 } else {
-                    listener.onError(task.getException().getMessage());
+                    listenerUser.onError(task.getException().getMessage());
                 }
             }
         });
     }
+
 
 }

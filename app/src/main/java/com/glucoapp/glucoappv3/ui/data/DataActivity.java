@@ -9,6 +9,7 @@ import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.gigamole.library.PulseView;
+import com.glucoapp.data.entities.Glucosa;
 import com.glucoapp.glucoappv3.R;
 import com.glucoapp.glucoappv3.interfaces.Data;
 import com.glucoapp.glucoappv3.ui.home.HomeActivity;
@@ -39,11 +41,13 @@ public class DataActivity extends AppCompatActivity implements Data.View{
     @BindView(R.id.lbl_result) TextView lblResult;
     @BindView(R.id.lbl_status) TextView lblStatus;
     @BindView(R.id.blood_stick) ImageView bloodStick;
+    @BindView(R.id.progressBar) ProgressBar progressBar;
 
     AnimationSet animationSet;
     TranslateAnimation translateDownAnimation;
     TranslateAnimation translateUpAnimation; /* No se usa por el momento */
 
+    Glucosa glucosa = new Glucosa();
 
     Data.Presenter presenter;
 
@@ -95,7 +99,7 @@ public class DataActivity extends AppCompatActivity implements Data.View{
                 break;
             }
             case R.id.btn_save:{
-
+                presenter.saveGlucoData(glucosa);
                 break;
             }
         }
@@ -107,6 +111,16 @@ public class DataActivity extends AppCompatActivity implements Data.View{
     }
 
     /* Implementación de métodos */
+    @Override
+    public void showLoading() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideLoading() {
+        progressBar.setVisibility(View.GONE);
+    }
+
     @Override
     public void btAdapterFailed() {
         Toast.makeText(DataActivity.this, Constants.DONT_HAVE_BT_ERROR, Toast.LENGTH_LONG).show();
@@ -132,22 +146,6 @@ public class DataActivity extends AppCompatActivity implements Data.View{
     }
 
     @Override
-    public void enableUi() {
-        btnSave.setEnabled(Boolean.TRUE);
-        btnSave.setBackground(getDrawable(R.drawable.bg_btn_primary));
-        btnGluco.setEnabled(Boolean.TRUE);
-        spinnerDevices.setEnabled(Boolean.TRUE);
-    }
-
-    @Override
-    public void disableUi() {
-        btnSave.setEnabled(Boolean.FALSE);
-        btnSave.setBackground(getDrawable(R.drawable.bg_btn_primary_disabled));
-        btnGluco.setEnabled(Boolean.FALSE);
-        spinnerDevices.setEnabled(Boolean.FALSE);
-    }
-
-    @Override
     public void glucometerEnabled() {
         lblStatus.setText(getText(R.string.segundo_estado));
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -160,10 +158,11 @@ public class DataActivity extends AppCompatActivity implements Data.View{
     }
 
     @Override
-    public void saveEnabled(String glucoValue) {
+    public void saveEnabled(Glucosa glucosa) {
+        this.glucosa = glucosa;
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         bloodStick.clearAnimation();
-        lblResult.setText(glucoValue);
+        lblResult.setText(glucosa.getGlucosa());
         lblStatus.setText(getText(R.string.cuarto_estado));
         btnGluco.setEnabled(Boolean.FALSE);
         spinnerDevices.setEnabled(Boolean.FALSE);
@@ -173,8 +172,21 @@ public class DataActivity extends AppCompatActivity implements Data.View{
     }
 
     @Override
+    public void onSuccessSaveGlucoData() {
+        this.glucosa = new Glucosa();
+        spinnerDevices.setEnabled(Boolean.TRUE);
+        spinnerDevices.setClickable(Boolean.TRUE);
+        btnGluco.setEnabled(Boolean.FALSE);
+        btnSave.setEnabled(Boolean.FALSE);
+        btnSave.setBackground(getDrawable(R.drawable.bg_btn_primary_disabled));
+        lblResult.setText(getString(R.string.valor_vacio));
+        lblStatus.setText(getString(R.string.primer_estado));
+        Toast.makeText(this, Constants.SUCCESS_GLUCO_DATA, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
     public void onError(String error) {
-        Toast.makeText(this, error, Toast.LENGTH_LONG);
+        Toast.makeText(this, error, Toast.LENGTH_LONG).show();
         Intent intentHome = new Intent(DataActivity.this, HomeActivity.class);
         startActivity(intentHome);
         finish();

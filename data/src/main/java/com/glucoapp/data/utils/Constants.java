@@ -8,6 +8,9 @@ public class Constants {
     public static final int UNO_VALUE = 1;
 
     public static final String ESPACIO = " ";
+    public static final String SLASH = "/";
+    public static final String GUION = "-";
+    public static final String GUION_BAJO = "_";
 
     public static final String DATE_FORMATTER="dd/MM/yyyy HH:mm:ss";
 

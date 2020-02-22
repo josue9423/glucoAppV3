@@ -5,17 +5,17 @@ import com.glucoapp.data.repositories.firebase.Authentication;
 import com.glucoapp.data.repositories.firebase.Datastore;
 import com.glucoapp.data.repositories.firebase.Impl.AuthenticationImpl;
 import com.glucoapp.data.repositories.firebase.Impl.DatastoreImpl;
-import com.glucoapp.data.repositories.firebase.Listener;
+import com.glucoapp.data.repositories.firebase.ListenerUser;
 import com.glucoapp.domain.usecases.UserUseCase;
 
-public class UserUseCaseImpl implements UserUseCase, Listener {
+public class UserUseCaseImpl implements UserUseCase, ListenerUser {
 
-    Listener listener;
+    ListenerUser listenerUser;
     Authentication authentication;
     Datastore datastore;
 
-    public UserUseCaseImpl(Listener listener) {
-        this.listener = listener;
+    public UserUseCaseImpl(ListenerUser listenerUser) {
+        this.listenerUser = listenerUser;
         authentication = new AuthenticationImpl(this);
         datastore = new DatastoreImpl(this);
     }
@@ -51,21 +51,21 @@ public class UserUseCaseImpl implements UserUseCase, Listener {
     }
 
 
-    /* Listener */
+    /* ListenerUser */
 
     @Override
     public void onSuccess() {
-        listener.onSuccess();
+        listenerUser.onSuccess();
     }
 
     @Override
     public void onError(String error) {
-        listener.onError(error);
+        listenerUser.onError(error);
     }
 
     @Override
     public void onSuccessCurrentUser(User user) {
-        listener.onSuccessCurrentUser(user);
+        listenerUser.onSuccessCurrentUser(user);
     }
 
 }

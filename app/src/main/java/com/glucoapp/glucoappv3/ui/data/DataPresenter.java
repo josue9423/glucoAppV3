@@ -73,13 +73,26 @@ public class DataPresenter extends BasePresenter implements Data.Presenter {
     }
 
     @Override
+    public void saveGlucoData(Glucosa glucosa) {
+        view.showLoading();
+        glucosaUseCase.saveGlucoData(glucosa);
+    }
+
+    @Override
     public void onSuccessUpdateGlucoData(Glucosa glucosa){
-        view.saveEnabled(glucosa.getGlucosa());
+        view.saveEnabled(glucosa);
+    }
+
+    @Override
+    public void onSuccessSaveGlucoData() {
+        view.onSuccessSaveGlucoData();
+        view.hideLoading();
     }
 
     @Override
     public void onError(String error){
         view.onError(error);
+        view.hideLoading();
     }
 
 }

@@ -32,6 +32,11 @@ public class GlucosaUseCaseImpl implements GlucosaUseCase, ListenerGlucosa {
     }
 
     @Override
+    public void saveGlucoData(Glucosa glucosa) {
+        datastore.saveGlucoData(glucosa);
+    }
+
+    @Override
     public Glucosa getBestData(ArrayList<Glucosa> listaGlucosa) {
        return listaGlucosa.stream().min(Comparator.comparing(Glucosa::getNumberGlucosa)).get();
     }
@@ -53,6 +58,11 @@ public class GlucosaUseCaseImpl implements GlucosaUseCase, ListenerGlucosa {
             listenerGlucosa.onSuccessGetMounthlyData(listaGlucosa);
         else
             listenerGlucosa.onError(Constants.GLUCODATA_ERROR);
+    }
+
+    @Override
+    public void onSuccessSaveGlucoData() {
+        listenerGlucosa.onSuccessSaveGlucoData();
     }
 
     @Override

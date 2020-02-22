@@ -52,6 +52,7 @@
     <string name="btn_guardar">Guardar muestra</string>
     <string name="lbl_unidad">mmol/L</string>
     <string name="conecta">Conecta tu glucometro aquí</string>
+    <string name="valor_vacio">---</string>
 
     <string name="primer_estado">Conecta tu glucometro</string>
     <string name="segundo_estado">Presiona este glucometro</string>

@@ -43,4 +43,6 @@ public final class Constants {
     public static final String UPDATE_DATABASE_OK = "Se actualizó el prefil del usuario";
 
     public static final String NO_CHART_DATA = "Cargando los datos...";
+
+    public static final String SUCCESS_GLUCO_DATA = "Su muestra ya se registro en su historial...";
 }

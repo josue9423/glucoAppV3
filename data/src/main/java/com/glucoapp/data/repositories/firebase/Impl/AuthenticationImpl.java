@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 
 import com.glucoapp.data.entities.User;
 import com.glucoapp.data.repositories.firebase.Authentication;
-import com.glucoapp.data.repositories.firebase.Listener;
+import com.glucoapp.data.repositories.firebase.ListenerUser;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -17,15 +17,15 @@ public class AuthenticationImpl implements Authentication {
     private FirebaseAuth mAuth;
 
     /* Se declaran las interfaces.*/
-    private Listener listener;
+    private ListenerUser listenerUser;
 
     public AuthenticationImpl(){
         this.mAuth = FirebaseAuth.getInstance();
     }
 
-    public AuthenticationImpl(Listener listener) {
+    public AuthenticationImpl(ListenerUser listenerUser) {
         this.mAuth = FirebaseAuth.getInstance();
-        this.listener = listener;
+        this.listenerUser = listenerUser;
     }
 
     /* Implementación de métodos */
@@ -35,10 +35,10 @@ public class AuthenticationImpl implements Authentication {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful())
-                    listener.onSuccess();
+                    listenerUser.onSuccess();
                 else
                     if(task.getException() != null){
-                        listener.onError(task.getException().getMessage());
+                        listenerUser.onError(task.getException().getMessage());
                     }
                 }
         });
@@ -51,12 +51,12 @@ public class AuthenticationImpl implements Authentication {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     user.setUid(mAuth.getCurrentUser().getUid());
-                    datastoreImpl = new DatastoreImpl(listener);
+                    datastoreImpl = new DatastoreImpl(listenerUser);
                     datastoreImpl.updateDataUser(user);
                 }
                 else {
                     if(task.getException() != null){
-                        listener.onError(task.getException().getMessage());
+                        listenerUser.onError(task.getException().getMessage());
                     }
                 }
             }

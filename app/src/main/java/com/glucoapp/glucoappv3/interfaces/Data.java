@@ -2,19 +2,22 @@ package com.glucoapp.glucoappv3.interfaces;
 
 import android.content.Context;
 
+import com.glucoapp.data.entities.Glucosa;
+
 import java.util.List;
 
 public interface Data {
 
     interface View{
+        void showLoading();
+        void hideLoading();
         void btAdapterFailed();
         void btDisabled();
         void btNotPairedDevices();
         void setListBtDevices(List<String> listBt);
-        void enableUi();
-        void disableUi();
         void glucometerEnabled();
-        void saveEnabled(String glucoValue);
+        void saveEnabled(Glucosa glucosa);
+        void onSuccessSaveGlucoData();
         void onError(String error);
     }
 
@@ -23,5 +26,6 @@ public interface Data {
         void setListBtDevices(Context context);
         void connectDevice(String deviceString);
         void updateGlucoData();
+        void saveGlucoData(Glucosa glucosa);
     }
 }
