@@ -38,6 +38,7 @@ dependencies {
     implementation group: 'com.google.dagger', name: 'dagger-android-support', version: '2.22.1'
 
     implementation 'com.github.devlight.pulseview:library:1.0.2'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     implementation project(path: ':domain')
     implementation project(path: ':data')

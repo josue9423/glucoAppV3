@@ -9,31 +9,26 @@
     android:background="@color/colorWhite"
     tools:context=".ui.splash.SplashActivity">
 
-    <com.gigamole.library.PulseView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_logo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:pv_alpha="30"
-        app:pv_color="@color/colorPrimary"
-        app:pv_icon="@drawable/ic_splash_log"
-        app:pv_icon_width="120sp"
-        app:pv_icon_height="180sp"
-        app:pv_measure="width"
-        app:pv_spawn_period="1000"
-        app:pv_interpolator="@android:anim/linear_interpolator" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_splash_log"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom"
+        android:id="@+id/lbl_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:paddingBottom="90sp"
         android:textSize="@dimen/textBigSize"
         android:textColor="@color/colorPrimary"
-        android:text="@string/app_name"/>
-
-
-
-
+        android:text="@string/app_name"
+        app:layout_constraintTop_toBottomOf="@+id/img_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

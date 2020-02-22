@@ -3,9 +3,9 @@ package com.glucoapp.domain.usecases.impl;
 import com.glucoapp.data.entities.User;
 import com.glucoapp.data.repositories.firebase.Authentication;
 import com.glucoapp.data.repositories.firebase.Datastore;
-import com.glucoapp.data.repositories.firebase.Listener;
 import com.glucoapp.data.repositories.firebase.Impl.AuthenticationImpl;
 import com.glucoapp.data.repositories.firebase.Impl.DatastoreImpl;
+import com.glucoapp.data.repositories.firebase.Listener;
 import com.glucoapp.domain.usecases.UserUseCase;
 
 public class UserUseCaseImpl implements UserUseCase, Listener {

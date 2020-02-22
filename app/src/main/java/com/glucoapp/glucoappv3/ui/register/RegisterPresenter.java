@@ -11,7 +11,6 @@ import com.glucoapp.glucoappv3.R;
 import com.glucoapp.glucoappv3.interfaces.Register;
 import com.glucoapp.glucoappv3.ui.BasePresenter;
 import com.glucoapp.glucoappv3.utils.Constants;
-import com.glucoapp.glucoappv3.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

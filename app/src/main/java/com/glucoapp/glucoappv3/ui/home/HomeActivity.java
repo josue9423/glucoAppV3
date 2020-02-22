@@ -15,12 +15,15 @@ import androidx.appcompat.widget.Toolbar;
 import com.glucoapp.data.entities.User;
 import com.glucoapp.glucoappv3.R;
 import com.glucoapp.glucoappv3.interfaces.Home;
+import com.glucoapp.glucoappv3.ui.data.DataActivity;
+import com.glucoapp.glucoappv3.ui.history.HistoryActivity;
 import com.glucoapp.glucoappv3.ui.login.LoginActivity;
 import com.glucoapp.glucoappv3.ui.register.RegisterActivity;
 import com.glucoapp.glucoappv3.utils.Constants;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class HomeActivity extends AppCompatActivity implements Home.View {
 
@@ -33,6 +36,8 @@ public class HomeActivity extends AppCompatActivity implements Home.View {
     /* Elementos de la UI */
     @BindView(R.id.toolbar) Toolbar myToolbar;
     @BindView(R.id.btn_add) Button btnAddData;
+    @BindView(R.id.btn_history) Button btnHistory;
+    @BindView(R.id.btn_map) Button btnMap;
     @BindView(R.id.progressBar) ProgressBar progressBar;
 
     @Override
@@ -55,6 +60,42 @@ public class HomeActivity extends AppCompatActivity implements Home.View {
         setSupportActionBar(myToolbar);
         presenter.validateIntentData(getIntent().getExtras());
     }
+    private void logOut() {
+        presenter.logOut();
+    }
+    private void goToProfile() {
+        Intent intentProfile = new Intent(HomeActivity.this, RegisterActivity.class);
+        intentProfile.putExtra(Constants.MY_USER, user);
+        startActivity(intentProfile);
+    }
+    private void goToData(){
+        Intent intentData = new Intent(HomeActivity.this, DataActivity.class);
+        startActivity(intentData);
+    }
+    private void goToHistory(){
+        Intent intentHistory = new Intent(HomeActivity.this, HistoryActivity.class);
+        startActivity(intentHistory);
+    }
+    private void goToMap(){}
+
+    @OnClick ({R.id.btn_add, R.id.btn_history, R.id.btn_map})
+    public void onClick(View view){
+        switch(view.getId()){
+            case R.id.btn_add:{
+                goToData();
+                break;
+            }
+            case R.id.btn_history:{
+                goToHistory();
+                break;
+            }
+            case R.id.btn_map:{
+                goToMap();
+                break;
+            }
+        }
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -75,16 +116,6 @@ public class HomeActivity extends AppCompatActivity implements Home.View {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    private void goToProfile() {
-        Intent intentProfile = new Intent(HomeActivity.this, RegisterActivity.class);
-        intentProfile.putExtra(Constants.MY_USER, user);
-        startActivity(intentProfile);
-    }
-
-    private void logOut() {
-        presenter.logOut();
     }
 
     @Override
@@ -120,11 +151,15 @@ public class HomeActivity extends AppCompatActivity implements Home.View {
     public void enableUi() {
         myToolbar.setEnabled(Boolean.TRUE);
         btnAddData.setEnabled(Boolean.TRUE);
+        btnHistory.setEnabled(Boolean.TRUE);
+        btnMap.setEnabled(Boolean.TRUE);
     }
 
     @Override
     public void disableUi() {
         myToolbar.setEnabled(Boolean.FALSE);
         btnAddData.setEnabled(Boolean.FALSE);
+        btnHistory.setEnabled(Boolean.FALSE);
+        btnMap.setEnabled(Boolean.FALSE);
     }
 }

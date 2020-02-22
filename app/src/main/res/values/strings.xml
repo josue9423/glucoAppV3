@@ -44,4 +44,28 @@
     <string name="menu_perfil">Mi perfil</string>
     <string name="menu_salir">Salir X</string>
 
+    <!-- DATA -->
+    <string name="dispositivos_disponibles">Dispositivos disponibles: </string>
+    <string name="conectado">Conectado</string>
+    <string name="desconectado">Desconectado</string>
+    <string name="btn_tomar">Tomar muestra</string>
+    <string name="btn_guardar">Guardar muestra</string>
+    <string name="lbl_unidad">mmol/L</string>
+    <string name="conecta">Conecta tu glucometro aquí</string>
+
+    <string name="primer_estado">Conecta tu glucometro</string>
+    <string name="segundo_estado">Presiona este glucometro</string>
+    <string name="tercer_estado">Introduce tu muestra</string>
+    <string name="cuarto_estado">Guarda tu muestra</string>
+
+    <!-- HISTORY -->
+    <string name="semanal">Semanal</string>
+    <string name="mensual">Mensual</string>
+
+    <string name="ultimo_dato">Ultima muestra: </string>
+    <string name="mejor_dato">Mejor muestra: </string>
+
+    <string name="ver_todos">Ver todos</string>
+    <string name="ver_menos">Ver menos</string>
+
 </resources>

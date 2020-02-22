@@ -3,15 +3,25 @@
     <dimen name="textNormalSize">16sp</dimen>
     <dimen name="textBigSize">34sp</dimen>
     <dimen name="textSmallSize">11sp</dimen>
+    <dimen name="textTinySize">10sp</dimen>
     <dimen name="textBigBigSize">54sp</dimen>
 
-    <dimen name="inputNormalHeight">48sp</dimen>
-    <dimen name="inputNormalWidth">320sp</dimen>
-    <dimen name="inputSmallWidth">220sp</dimen>
+    <dimen name="inputNormalHeight">48dp</dimen>
+    <dimen name="inputTinyHeight">32dp</dimen>
+    <dimen name="inputNormalWidth">320dp</dimen>
+    <dimen name="inputSmallWidth">220dp</dimen>
+    <dimen name="inputTinyWidth">150dp</dimen>
 
-    <dimen name="inputNormalMargins">32sp</dimen>
-    <dimen name="inputSmallMargins">12sp</dimen>
-    <dimen name="inputSmallMarginsVertical">8sp</dimen>
+    <dimen name="inputNormalMargins">32dp</dimen>
+    <dimen name="inputSmallMargins">10dp</dimen>
+    <dimen name="inputSmallMarginsVertical">8dp</dimen>
+    <dimen name="markerPadding">7dp</dimen>
+    <dimen name="markerPaddingBottom">9dp</dimen>
+    <dimen name="markerPaddingHorizontal">2dp</dimen>
 
-    <dimen name="homeOptionHeight">102sp</dimen>
+    <dimen name="homeOptionHeight">102dp</dimen>
+    <dimen name="glucometer">322dp</dimen>
+    <dimen name="glucometerContent">382dp</dimen>
+
+    <dimen name="chartHeight">250dp</dimen>
 </resources>

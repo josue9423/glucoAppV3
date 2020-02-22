@@ -1,17 +1,27 @@
 package com.glucoapp.glucoappv3.ui;
 
+import com.glucoapp.data.entities.Glucosa;
 import com.glucoapp.data.entities.User;
 import com.glucoapp.data.repositories.firebase.Listener;
+import com.glucoapp.data.repositories.firebase.ListenerGlucosa;
 
-public class BasePresenter implements Listener {
+import java.util.ArrayList;
+
+public class BasePresenter implements Listener, ListenerGlucosa {
 
     /* Estos metodos serán sobre escritos */
 
     @Override
     public void onSuccess() {}
     @Override
-    public void onError(String error) {}
+    public void onSuccessUpdateGlucoData(Glucosa glucosa) {}
+    @Override
+    public void onSuccessGetMounthlyData(ArrayList<Glucosa> listaGlucosa){}
     @Override
     public void onSuccessCurrentUser(User user) {}
+
+    /*Errores*/
+    @Override
+    public void onError(String error) {}
 
 }

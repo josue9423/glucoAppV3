@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightGray"
+    tools:context=".ui.history.HistoryActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_progressbar"
+        android:elevation="100dp"
+        android:indeterminateTint="@color/colorPrimaryDark"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:titleTextAppearance="@style/textStyle"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorLightGray">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_below="@id/linearLayout"
+                android:padding="@dimen/inputSmallMargins"
+                android:background="@color/colorPrimary">
+                <Button
+                    android:id="@+id/btn_semanal"
+                    android:layout_width="@dimen/inputTinyWidth"
+                    android:layout_height="@dimen/inputTinyHeight"
+                    android:background="@drawable/bg_btn_primary_transparent"
+                    android:text="@string/semanal"
+                    android:textColor="@color/colorWhite"
+                    android:layout_marginHorizontal="@dimen/inputSmallMargins"/>
+                <Button
+                    android:id="@+id/btn_mensual"
+                    android:layout_width="@dimen/inputTinyWidth"
+                    android:layout_height="@dimen/inputTinyHeight"
+                    android:background="@drawable/bg_btn_primary_transparent"
+                    android:text="@string/mensual"
+                    android:textColor="@color/colorWhite"
+                    android:layout_marginHorizontal="@dimen/inputSmallMargins"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorPrimary">
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/chartHeight"
+                    android:layout_below="@id/linearLayout" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:layout_margin="@dimen/inputSmallMargins"
+                    android:paddingVertical="@dimen/inputSmallMarginsVertical"
+                    android:paddingHorizontal="@dimen/inputSmallMargins"
+                    android:elevation="3dp"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/tittle_ultimo_dato"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/textSmallSize"
+                        android:textFontWeight="900"
+                        android:text="@string/ultimo_dato"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+                    <ImageView
+                        android:id="@+id/logo_ultimo_dato"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_miscellaneous"
+                        app:layout_constraintTop_toBottomOf="@+id/tittle_ultimo_dato"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/ultima_muestra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textFontWeight="900"
+                        android:layout_marginHorizontal="@dimen/inputSmallMargins"
+                        android:textSize="@dimen/textBigSize"
+                        app:layout_constraintLeft_toRightOf="@+id/logo_ultimo_dato"
+                        app:layout_constraintTop_toTopOf="@+id/logo_ultimo_dato" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="900"
+                        android:textSize="@dimen/textSmallSize"
+                        android:text="@string/lbl_unidad"
+                        android:layout_marginHorizontal="@dimen/inputNormalMargins"
+                        app:layout_constraintRight_toRightOf="@+id/ultima_muestra"
+                        app:layout_constraintTop_toBottomOf="@+id/ultima_muestra"
+                        app:layout_constraintLeft_toLeftOf="@id/ultima_muestra"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:layout_margin="@dimen/inputSmallMargins"
+                    android:paddingVertical="@dimen/inputSmallMarginsVertical"
+                    android:paddingHorizontal="@dimen/inputSmallMargins"
+                    android:elevation="3dp"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/tittle_mejor_dato"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/textSmallSize"
+                        android:textFontWeight="900"
+                        android:text="@string/mejor_dato"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+                    <ImageView
+                        android:id="@+id/logo_mejor_dato"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_medal"
+                        app:layout_constraintTop_toBottomOf="@+id/tittle_mejor_dato"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/mejor_muestra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textFontWeight="900"
+                        android:layout_marginHorizontal="@dimen/inputSmallMargins"
+                        android:textSize="@dimen/textBigSize"
+                        app:layout_constraintLeft_toRightOf="@+id/logo_mejor_dato"
+                        app:layout_constraintTop_toTopOf="@+id/logo_mejor_dato" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textFontWeight="900"
+                        android:textSize="@dimen/textSmallSize"
+                        android:text="@string/lbl_unidad"
+                        android:layout_marginHorizontal="@dimen/inputSmallMargins"
+                        app:layout_constraintRight_toRightOf="@+id/mejor_muestra"
+                        app:layout_constraintTop_toBottomOf="@+id/mejor_muestra"
+                        app:layout_constraintLeft_toLeftOf="@id/mejor_muestra"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <com.glucoapp.glucoappv3.utils.ui.NonScrollListView
+                    android:id="@+id/gluco_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/btn_ver"
+                    android:layout_width="@dimen/inputSmallWidth"
+                    android:layout_height="@dimen/inputTinyHeight"
+                    android:background="@drawable/bg_btn_primary"
+                    android:textColor="@color/colorWhite"
+                    android:layout_margin="@dimen/inputSmallMargins"
+                    android:text="@string/ver_todos"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

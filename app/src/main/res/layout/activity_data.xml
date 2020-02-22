@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.data.DataActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:titleTextAppearance="@style/textStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/inputSmallMargins"
+        android:paddingVertical="@dimen/inputSmallMargins"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <Spinner
+            android:id="@+id/spinner_devices"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:spinnerMode="dialog"
+            android:background="@drawable/bg_input_spinner"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_body"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/glucometerContent"
+        android:layout_marginBottom="32dp"
+        android:paddingHorizontal="@dimen/inputSmallMargins"
+        app:layout_constraintBottom_toTopOf="@+id/btn_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout">
+
+        <TextView
+            android:id="@+id/lbl_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="1000dp"
+            android:gravity="center"
+            android:text="@string/primer_estado"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/textTinySize"
+            android:layout_marginTop="24dp"
+            app:layout_constraintBottom_toTopOf="@id/lbl_result"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_gluco" />
+
+        <com.gigamole.library.PulseView
+            android:id="@+id/btn_gluco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:pv_alpha="70"
+            app:pv_color="@color/colorPrimary"
+            app:pv_icon="@drawable/ic_sugar_blood_level"
+            app:pv_icon_height="@dimen/glucometer"
+            app:pv_icon_width="@dimen/glucometer"
+            app:pv_interpolator="@android:anim/linear_interpolator"
+            app:pv_measure="height"
+            app:pv_spawn_period="800"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/lbl_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="---"
+            android:textColor="@color/colorBeautyBlack"
+            android:textFontWeight="900"
+            android:textSize="@dimen/textBigBigSize"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_gluco"
+            app:layout_constraintEnd_toEndOf="@+id/btn_gluco"
+            app:layout_constraintStart_toStartOf="@+id/btn_gluco"
+            app:layout_constraintTop_toTopOf="@+id/btn_gluco"
+            app:layout_constraintVertical_bias="0.28" />
+
+        <TextView
+            android:id="@+id/lbl_unidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_unidad"
+            android:textColor="@color/colorGray"
+            android:textSize="@dimen/textSmallSize"
+            app:layout_constraintEnd_toEndOf="@+id/btn_gluco"
+            app:layout_constraintStart_toStartOf="@+id/btn_gluco"
+            app:layout_constraintTop_toBottomOf="@id/lbl_result" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/blood_stick"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/glucometer"
+            android:src="@drawable/ic_sugar_blood"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="@dimen/inputSmallWidth"
+        android:layout_height="@dimen/inputNormalHeight"
+        android:layout_margin="@dimen/inputNormalMargins"
+        android:background="@drawable/bg_btn_primary_disabled"
+        android:enabled="false"
+        android:text="@string/btn_guardar"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,19 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="@dimen/glucometer"
+    android:height="@dimen/glucometer"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+  <path
+      android:pathData="M285.214,512h-58.428c-2.088,0 -3.78,-1.692 -3.78,-3.78V340.929h65.988V508.22C288.994,510.308 287.302,512 285.214,512z"
+      android:fillColor="#E1EFFB"/>
+  <path
+      android:pathData="M238.159,340.929V512h47.055c2.088,0 3.78,-1.692 3.78,-3.78V340.929H238.159z"
+      android:fillColor="#BACED8"/>
+  <path
+      android:pathData="M223.01,373.94h65.988v46.681h-65.988z"
+      android:fillColor="@color/colorPrimaryLight"/>
+  <path
+      android:pathData="M238.16,373.94h50.835v46.681h-50.835z"
+      android:fillColor="@color/colorPrimary"/>
+</vector>
+

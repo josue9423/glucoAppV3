@@ -2,11 +2,9 @@ package com.glucoapp.glucoappv3.interfaces;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 
 import com.glucoapp.data.entities.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface Register {

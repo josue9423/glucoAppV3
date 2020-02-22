@@ -3,10 +3,13 @@ package com.glucoapp.glucoappv3.ui.splash;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.gigamole.library.PulseView;
 import com.glucoapp.data.entities.User;
 import com.glucoapp.glucoappv3.R;
 import com.glucoapp.glucoappv3.interfaces.Splash;
@@ -19,7 +22,10 @@ import butterknife.ButterKnife;
 
 public class SplashActivity extends AppCompatActivity implements Splash.View {
 
-    @BindView(R.id.img_logo) PulseView imgLogo;
+    @BindView(R.id.img_logo) ImageView imgLogo;
+    @BindView(R.id.lbl_title) TextView lblTitle;
+    Animation splashAnimation;
+    Animation splashTranslateAnimation;
 
     Splash.Presenter presenter;
 
@@ -34,17 +40,21 @@ public class SplashActivity extends AppCompatActivity implements Splash.View {
         presenter = new SplashPresenter();
         presenter.setHomeView(this);
 
+        splashAnimation = AnimationUtils.loadAnimation(this,R.anim.splash_animation);
+        splashTranslateAnimation = AnimationUtils.loadAnimation(this,R.anim.splash_translate_animation);
+
         presenter.getExistingUser();
     }
 
     @Override
     public void enableAnimation() {
-        imgLogo.startPulse();
+        imgLogo.startAnimation(splashTranslateAnimation);
+        lblTitle.startAnimation(splashAnimation);
     }
 
     @Override
     public void disableAnimation() {
-        imgLogo.finishPulse();
+        /* Nada por el momento */
     }
 
     @Override
@@ -52,6 +62,7 @@ public class SplashActivity extends AppCompatActivity implements Splash.View {
         Intent intentHome = new Intent(SplashActivity.this, HomeActivity.class);
         intentHome.putExtra(Constants.MY_USER, user);
         startActivity(intentHome);
+        finish();
     }
 
     @Override
@@ -65,6 +76,5 @@ public class SplashActivity extends AppCompatActivity implements Splash.View {
                 finish();
             }
         },Constants.SPLASH_SCREEN_TIMER);
-
     }
 }

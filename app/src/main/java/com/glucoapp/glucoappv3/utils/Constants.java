@@ -2,15 +2,20 @@ package com.glucoapp.glucoappv3.utils;
 
 public final class Constants {
 
+    public static final int REQUEST_ENABLED_BT = 0;
+
     public static final int GRAY_COLOR =  0xFFC0C0C0;
     public static final int BEAUTYBLACK_COLOR = 0xFF464646;
     public static final int BLUE_COLOR = 0xFF056CF2;
 
     public static final int CERO_VALUE = 0;
     public static final int UNO_VALUE =1;
+    public static final int TRES_VALUE =3;
     public static final int MAX_LENGTH_PASSWORD_VALUE = 6;
-    public static final int SPLASH_SCREEN_TIMER = 2000;
+    public static final long SPLASH_SCREEN_TIMER = 2500;
+    public static final int DIABETES_RANGE_VALUE = 140;
 
+    public static final String UNIDAD_MEDIDA ="mmol/L";
 
     public static final String FORMAT_DATE = "dd/MM/yy";
 
@@ -33,6 +38,9 @@ public final class Constants {
     public static final String DONT_HAVE_BT_ERROR = "Lo sentimos, tu dispisitivo no tiene Bluetooth";
     public static final String DONT_USE_BT_ERROR = "Por favor, para ingresar active su bluetooth";
     public static final String DONT_PAIRED_DEVICES_ERROR = "No tiene dispositivos emparejados...";
+    public static final String DATA_TRANSFER_ERROR = "Error en la transferencia de datos";
 
     public static final String UPDATE_DATABASE_OK = "Se actualizó el prefil del usuario";
+
+    public static final String NO_CHART_DATA = "Cargando los datos...";
 }

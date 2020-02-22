@@ -13,6 +13,8 @@
     <color name="colorGrayDisabled">#E2E2E2</color>
     <color name="colorBeautyBlack">#464646</color>
     <color name="colorTransparentShadow">#70000000</color>
+    <color name="colorTransparent">#30000000</color>
     <color name="colorInvisible">#00000000</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorTransparentWhite">#70FFFFFF</color>
 </resources>

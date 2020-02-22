@@ -2,10 +2,9 @@ package com.glucoapp.data.repositories.firebase.Impl;
 
 import androidx.annotation.NonNull;
 
-
 import com.glucoapp.data.entities.User;
-import com.glucoapp.data.repositories.firebase.Listener;
 import com.glucoapp.data.repositories.firebase.Authentication;
+import com.glucoapp.data.repositories.firebase.Listener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -19,6 +18,10 @@ public class AuthenticationImpl implements Authentication {
 
     /* Se declaran las interfaces.*/
     private Listener listener;
+
+    public AuthenticationImpl(){
+        this.mAuth = FirebaseAuth.getInstance();
+    }
 
     public AuthenticationImpl(Listener listener) {
         this.mAuth = FirebaseAuth.getInstance();
