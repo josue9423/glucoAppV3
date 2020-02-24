@@ -34,35 +34,21 @@
 
         <EditText
             android:id="@+id/input_email"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/inputNormalHeight"
-            android:layout_marginStart="@dimen/inputNormalMargins"
-            android:layout_marginEnd="@dimen/inputNormalMargins"
-            android:background="@drawable/bg_input"
             android:hint="@string/input_email"
             android:importantForAutofill="no"
             android:inputType="textEmailAddress"
-            android:textColor="@color/colorBeautyBlack"
-            android:textColorHint="@color/colorGray"
-            android:textSize="@dimen/textNormalSize" />
+            style="@style/input"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="16dp">
 
             <EditText
                 android:id="@+id/input_password"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/inputNormalHeight"
-                android:layout_marginStart="@dimen/inputNormalMargins"
-                android:layout_marginEnd="@dimen/inputNormalMargins"
-                android:background="@drawable/bg_input"
                 android:hint="@string/input_password"
                 android:inputType="textPassword"
-                android:textColor="@color/colorBeautyBlack"
-                android:textColorHint="@color/colorGray"
-                android:textSize="@dimen/textNormalSize"
+                style="@style/input"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -82,88 +68,47 @@
 
         <EditText
             android:id="@+id/input_nombres"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/inputNormalHeight"
-            android:layout_marginStart="@dimen/inputNormalMargins"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="@dimen/inputNormalMargins"
-            android:background="@drawable/bg_input"
             android:hint="@string/input_name"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
-            android:textColor="@color/colorBeautyBlack"
-            android:textColorHint="@color/colorGray"
-            android:textSize="@dimen/textNormalSize" />
+            style="@style/input"/>
 
         <EditText
             android:id="@+id/input_apellidos"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/inputNormalHeight"
-            android:layout_marginStart="@dimen/inputNormalMargins"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="@dimen/inputNormalMargins"
-            android:background="@drawable/bg_input"
             android:hint="@string/input_lastname"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
-            android:textColor="@color/colorBeautyBlack"
-            android:textColorHint="@color/colorGray"
-            android:textSize="@dimen/textNormalSize" />
+            style="@style/input"/>
 
         <Spinner
             android:id="@+id/spinner_typeDiabetes"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/inputNormalHeight"
-            android:layout_marginStart="@dimen/inputNormalMargins"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="@dimen/inputNormalMargins"
-            android:background="@drawable/bg_input_spinner"
-            android:spinnerMode="dialog"
-            android:textColor="@color/colorBeautyBlack"
-            android:textSize="@dimen/textNormalSize" />
+            style="@style/spinner"/>
 
         <Spinner
             android:id="@+id/spinner_gender"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/inputNormalHeight"
-            android:layout_marginStart="@dimen/inputNormalMargins"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="@dimen/inputNormalMargins"
-            android:background="@drawable/bg_input_spinner"
-            android:spinnerMode="dialog"
-            android:textColor="@color/colorBeautyBlack"
-            android:textSize="@dimen/textNormalSize" />
+            style="@style/spinner" />
 
         <EditText
             android:id="@+id/input_date"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/inputNormalHeight"
-            android:layout_marginStart="@dimen/inputNormalMargins"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="@dimen/inputNormalMargins"
-            android:background="@drawable/bg_input"
             android:clickable="true"
             android:focusable="false"
             android:hint="@string/input_date"
             android:importantForAutofill="no"
             android:inputType="date"
             android:maxLines="1"
-            android:textColor="@color/colorBeautyBlack"
-            android:textColorHint="@color/colorGray"
-            android:textSize="@dimen/textNormalSize"/>
+            style="@style/input"/>
 
         <Button
             android:id="@+id/btn_registrar"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/inputNormalHeight"
-            android:layout_marginStart="@dimen/inputNormalMargins"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="@dimen/inputNormalMargins"
             android:layout_marginBottom="32dp"
-            android:background="@drawable/bg_btn_primary"
             android:text="@string/btn_registrar"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textNormalSize" />
+            style="@style/btn_primary" />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

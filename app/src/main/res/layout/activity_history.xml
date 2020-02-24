@@ -24,12 +24,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            style="@style/toolbar_primary"
             app:titleTextAppearance="@style/textStyle"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -56,27 +51,19 @@
                 android:background="@color/colorPrimary">
                 <Button
                     android:id="@+id/btn_semanal"
-                    android:layout_width="@dimen/inputTinyWidth"
-                    android:layout_height="@dimen/inputTinyHeight"
-                    android:background="@drawable/bg_btn_primary_transparent"
                     android:text="@string/semanal"
-                    android:textColor="@color/colorWhite"/>
+                    style="@style/btn_transparent_tiny"/>
                 <Button
                     android:id="@+id/btn_mensual"
-                    android:layout_width="@dimen/inputTinyWidth"
-                    android:layout_height="@dimen/inputTinyHeight"
-                    android:background="@drawable/bg_btn_primary_transparent"
                     android:text="@string/mensual"
-                    android:textColor="@color/colorWhite"
-                    android:layout_marginHorizontal="@dimen/inputSmallMargins"/>
+                    android:layout_marginHorizontal="@dimen/inputSmallMargins"
+                    style="@style/btn_transparent_tiny"/>
                 <Button
                     android:id="@+id/btn_todo"
-                    android:layout_width="@dimen/inputTinyWidth"
-                    android:layout_height="@dimen/inputTinyHeight"
-                    android:background="@drawable/bg_btn_primary_transparent"
                     android:text="@string/todo"
-                    android:textColor="@color/colorWhite" />
+                    style="@style/btn_transparent_tiny"/>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -209,12 +196,9 @@
                     android:layout_height="wrap_content"/>
                 <Button
                     android:id="@+id/btn_ver"
-                    android:layout_width="@dimen/inputSmallWidth"
-                    android:layout_height="@dimen/inputTinyHeight"
-                    android:background="@drawable/bg_btn_primary"
-                    android:textColor="@color/colorWhite"
                     android:layout_margin="@dimen/inputSmallMargins"
-                    android:text="@string/ver_todos"/>
+                    android:text="@string/ver_todos"
+                    style="@style/btn_primary_small"/>
             </LinearLayout>
 
         </LinearLayout>

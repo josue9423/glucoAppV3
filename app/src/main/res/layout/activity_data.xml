@@ -49,10 +49,7 @@
 
         <Spinner
             android:id="@+id/spinner_devices"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:spinnerMode="dialog"
-            android:background="@drawable/bg_input_spinner"/>
+            style="@style/spinner"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -138,13 +135,9 @@
 
     <Button
         android:id="@+id/btn_save"
-        android:layout_width="@dimen/inputSmallWidth"
-        android:layout_height="@dimen/inputNormalHeight"
         android:layout_margin="@dimen/inputNormalMargins"
-        android:background="@drawable/bg_btn_primary_disabled"
-        android:enabled="false"
         android:text="@string/btn_guardar"
-        android:textColor="@color/colorWhite"
+        style="@style/btn_disable_small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

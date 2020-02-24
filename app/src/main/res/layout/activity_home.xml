@@ -30,13 +30,8 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/inputNormalMargins"
-            android:background="@color/colorInvisible"
-            android:gravity="center"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            style="@style/toolbar"
             app:titleTextAppearance="@style/textStyle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,45 +39,21 @@
 
         <Button
             android:id="@+id/btn_add"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/homeOptionHeight"
-            android:layout_marginStart="@dimen/inputSmallMargins"
-            android:layout_marginEnd="@dimen/inputSmallMargins"
-            android:layout_marginTop="@dimen/inputSmallMarginsVertical"
-            android:layout_marginBottom="@dimen/inputSmallMarginsVertical"
-            android:background="@drawable/bg_home_option"
             android:drawableLeft="@drawable/ic_blood"
             android:text="@string/option_nuevaMuestra"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textNormalSize" />
+            style="@style/btn_home"/>
 
         <Button
             android:id="@+id/btn_history"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/homeOptionHeight"
-            android:layout_marginStart="@dimen/inputSmallMargins"
-            android:layout_marginEnd="@dimen/inputSmallMargins"
-            android:layout_marginTop="@dimen/inputSmallMarginsVertical"
-            android:layout_marginBottom="@dimen/inputSmallMarginsVertical"
-            android:background="@drawable/bg_home_option"
             android:drawableLeft="@drawable/ic_patient"
             android:text="@string/option_historial"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textNormalSize" />
+            style="@style/btn_home" />
 
         <Button
             android:id="@+id/btn_map"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/homeOptionHeight"
-            android:layout_marginStart="@dimen/inputSmallMargins"
-            android:layout_marginEnd="@dimen/inputSmallMargins"
-            android:layout_marginTop="@dimen/inputSmallMarginsVertical"
-            android:layout_marginBottom="@dimen/inputSmallMarginsVertical"
-            android:background="@drawable/bg_home_option"
             android:drawableLeft="@drawable/ic_pin"
             android:text="@string/option_hospitalesCercanos"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textNormalSize" />
+            style="@style/btn_home" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 

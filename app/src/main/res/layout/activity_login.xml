@@ -33,7 +33,6 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -53,19 +52,11 @@
 
         <EditText
             android:id="@+id/input_email"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/inputNormalHeight"
-            android:layout_marginStart="@dimen/inputNormalMargins"
-            android:layout_marginEnd="@dimen/inputNormalMargins"
             android:layout_marginTop="24dp"
-
-            android:background="@drawable/bg_input"
             android:hint="@string/input_email"
             android:importantForAutofill="no"
             android:inputType="textEmailAddress"
-            android:textColor="@color/colorBeautyBlack"
-            android:textColorHint="@color/colorGray"
-            android:textSize="@dimen/textNormalSize" />
+            style="@style/input"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -74,16 +65,9 @@
 
             <EditText
                 android:id="@+id/input_password"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/inputNormalHeight"
-                android:layout_marginStart="@dimen/inputNormalMargins"
-                android:layout_marginEnd="@dimen/inputNormalMargins"
-                android:background="@drawable/bg_input"
                 android:hint="@string/input_password"
                 android:inputType="textPassword"
-                android:textColor="@color/colorBeautyBlack"
-                android:textColorHint="@color/colorGray"
-                android:textSize="@dimen/textNormalSize"
+                style="@style/input"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -104,15 +88,9 @@
 
         <Button
             android:id="@+id/btn_login"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/inputNormalHeight"
-            android:layout_marginStart="@dimen/inputNormalMargins"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="@dimen/inputNormalMargins"
-            android:background="@drawable/bg_btn_primary"
             android:text="@string/btn_ingresar"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textNormalSize" />
+            style="@style/btn_primary"/>
 
         <TextView
             android:id="@+id/lbl_register"

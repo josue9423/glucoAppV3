@@ -26,4 +26,87 @@
         <item name="android:fontFamily">monospace</item>
     </style>
 
+    <style name = "input">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/inputNormalHeight</item>
+        <item name="android:layout_marginStart">@dimen/inputSmallMargins</item>
+        <item name="android:layout_marginEnd">@dimen/inputSmallMargins</item>
+        <item name="android:background">@drawable/bg_input</item>
+        <item name="android:textColor">@color/colorBeautyBlack</item>
+        <item name="android:textColorHint">@color/colorGray</item>
+        <item name="android:textSize">@dimen/textNormalSize</item>
+    </style>
+
+    <style name = "btn_primary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/inputNormalHeight</item>
+        <item name="android:layout_marginStart">@dimen/inputSmallMargins</item>
+        <item name="android:layout_marginEnd">@dimen/inputSmallMargins</item>
+        <item name="android:background">@drawable/bg_btn_primary</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/textNormalSize</item>
+    </style>
+    <style name="btn_primary_small">
+        <item name="android:layout_width">@dimen/inputSmallWidth</item>
+        <item name="android:layout_height">@dimen/inputNormalHeight</item>
+        <item name="android:background">@drawable/bg_btn_primary</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/textNormalSize</item>
+    </style>
+    <style name="btn_disable_small">
+        <item name="android:layout_width">@dimen/inputSmallWidth</item>
+        <item name="android:layout_height">@dimen/inputNormalHeight</item>
+        <item name="android:background">@drawable/bg_btn_primary_disabled</item>
+        <item name="android:enabled">false</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/textNormalSize</item>
+    </style>
+    <style name="btn_transparent_tiny">
+        <item name="android:layout_width">@dimen/inputTinyWidth</item>
+        <item name="android:layout_height">@dimen/inputTinyHeight</item>
+        <item name="android:background">@drawable/bg_btn_primary_transparent</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/textNormalSize</item>
+    </style>
+
+    <style name = "spinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/inputNormalHeight</item>
+        <item name="android:layout_marginStart">@dimen/inputSmallMargins</item>
+        <item name="android:layout_marginEnd">@dimen/inputSmallMargins</item>
+        <item name="android:background">@drawable/bg_input_spinner</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/textNormalSize</item>
+        <item name="android:spinnerMode">dialog</item>
+    </style>
+
+    <style name = "btn_home">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/homeOptionHeight</item>
+        <item name="android:layout_marginStart">@dimen/inputSmallMargins</item>
+        <item name="android:layout_marginEnd">@dimen/inputSmallMargins</item>
+        <item name="android:layout_marginBottom">@dimen/inputSmallMargins</item>
+        <item name="android:layout_marginTop">@dimen/inputSmallMargins</item>
+        <item name="android:background">@drawable/bg_home_option</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/textNormalSize</item>
+    </style>
+
+    <style name = "toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorInvisible</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+    <style name = "toolbar_primary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
 </resources>
