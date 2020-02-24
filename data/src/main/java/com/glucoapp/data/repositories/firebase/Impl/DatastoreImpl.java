@@ -86,7 +86,7 @@ public class DatastoreImpl implements Datastore {
     public void saveGlucoData(Glucosa glucosa) {
         Authentication authentication = new AuthenticationImpl();
         String uid = authentication.isExistingUser();
-        String document = Utils.convertDateToDocumentId(glucosa.getFecha());
+        String document = glucosa.getFecha();
         mFirebase.collection(Constants.COLECTION_USER).document(uid).collection(Constants.COLECTION_DATA).document(document).set(glucosa).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

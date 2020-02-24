@@ -17,10 +17,8 @@ public class BasePresenter implements ListenerUser, ListenerGlucosa {
     public void onSuccessUpdateGlucoData(Glucosa glucosa) {}
     @Override
     public void onSuccessGetMounthlyData(ArrayList<Glucosa> listaGlucosa){}
-
     @Override
     public void onSuccessSaveGlucoData() {}
-
     @Override
     public void onSuccessCurrentUser(User user) {}
 

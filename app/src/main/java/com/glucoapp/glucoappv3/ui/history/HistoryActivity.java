@@ -49,6 +49,7 @@ public class HistoryActivity extends AppCompatActivity implements History.View {
 
     ArrayList<Glucosa> listaGlucosa = new ArrayList<>();
     ArrayList<Glucosa> listaReversa = new ArrayList<>();
+    ArrayList<Glucosa> listaFiltrada = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +95,7 @@ public class HistoryActivity extends AppCompatActivity implements History.View {
 
         //FILL
         lineDataSet.setDrawFilled(true);
-        lineDataSet.setFillAlpha(25);
+        lineDataSet.setFillAlpha(20);
         lineDataSet.setFillColor(getColor(R.color.colorAccent));
 
         // VALUES
@@ -139,10 +140,10 @@ public class HistoryActivity extends AppCompatActivity implements History.View {
         chart.setMinOffset(18f);
         chart.setTouchEnabled(Boolean.TRUE);
 
-        chart.animateX(700);
+        chart.animateX(300);
         chart.setNoDataText(Constants.NO_CHART_DATA);
         /* Marker */
-        IMarker marker = new CustomMarkerView(this,R.layout.layout_marker,listaGlucosa);
+        IMarker marker = new CustomMarkerView(this,R.layout.layout_marker,listaFiltrada);
         chart.setMarker(marker);
 
         chart.invalidate();
@@ -154,15 +155,19 @@ public class HistoryActivity extends AppCompatActivity implements History.View {
 
 
     /*Implementacion eventos UI*/
-    @OnClick({R.id.btn_semanal, R.id.btn_mensual, R.id.btn_ver})
+    @OnClick({R.id.btn_semanal, R.id.btn_mensual, R.id.btn_ver, R.id.btn_todo})
     public void onClick(View view){
         switch(view.getId()){
             case R.id.btn_semanal:{
-                //presenter.login(inputEmail.getText().toString(), inputPassword.getText().toString());
+                presenter.getDataPerWeek(listaGlucosa);
                 break;
             }
             case R.id.btn_mensual:{
-                //goToRegister();
+                presenter.getDataPerMounth(listaGlucosa);
+                break;
+            }
+            case R.id.btn_todo:{
+                presenter.getDataPerAllTime(listaGlucosa);
                 break;
             }
             case R.id.btn_ver:{
@@ -188,7 +193,8 @@ public class HistoryActivity extends AppCompatActivity implements History.View {
     }
 
     @Override
-    public void displayData(ArrayList<Entry> listEntry) {
+    public void displayData(ArrayList<Entry> listEntry, ArrayList<Glucosa> listaFiltrada) {
+        this.listaFiltrada = listaFiltrada;
         setChart(listEntry);
     }
 
@@ -212,7 +218,6 @@ public class HistoryActivity extends AppCompatActivity implements History.View {
         Toast.makeText(this,error,Toast.LENGTH_LONG).show();
         goToHome();
     }
-
 
 }
 

@@ -28,7 +28,7 @@ public class CustomMarkerView extends MarkerView {
     public void refreshContent(Entry e, Highlight highlight) {
         int xAxis = (int) e.getX();
         tvContent.setText("" + Math.round(e.getY())
-                +"\n"+listaGlucosa.get(xAxis).getFechaCorta()
+                +"\n"+listaGlucosa.get(xAxis).getFechaCorta().substring(com.glucoapp.glucoappv3.utils.Constants.DOS_VALUE)
                 +"\n"+listaGlucosa.get(xAxis).getHora());
         super.refreshContent(e, highlight);
     }

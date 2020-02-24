@@ -10,7 +10,7 @@
     <dimen name="inputTinyHeight">32dp</dimen>
     <dimen name="inputNormalWidth">320dp</dimen>
     <dimen name="inputSmallWidth">220dp</dimen>
-    <dimen name="inputTinyWidth">150dp</dimen>
+    <dimen name="inputTinyWidth">100dp</dimen>
 
     <dimen name="inputNormalMargins">32dp</dimen>
     <dimen name="inputSmallMargins">10dp</dimen>

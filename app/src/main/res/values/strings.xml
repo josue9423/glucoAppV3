@@ -62,6 +62,7 @@
     <!-- HISTORY -->
     <string name="semanal">Semanal</string>
     <string name="mensual">Mensual</string>
+    <string name="todo">Todo</string>
 
     <string name="ultimo_dato">Ultima muestra: </string>
     <string name="mejor_dato">Mejor muestra: </string>

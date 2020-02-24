@@ -9,8 +9,9 @@ public final class Constants {
     public static final int BLUE_COLOR = 0xFF056CF2;
 
     public static final int CERO_VALUE = 0;
-    public static final int UNO_VALUE =1;
-    public static final int TRES_VALUE =3;
+    public static final int UNO_VALUE = 1;
+    public static final int DOS_VALUE = 2;
+    public static final int TRES_VALUE = 3;
     public static final int MAX_LENGTH_PASSWORD_VALUE = 6;
     public static final long SPLASH_SCREEN_TIMER = 2500;
     public static final int DIABETES_RANGE_VALUE = 140;
