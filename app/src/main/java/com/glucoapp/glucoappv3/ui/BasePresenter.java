@@ -2,8 +2,8 @@ package com.glucoapp.glucoappv3.ui;
 
 import com.glucoapp.data.entities.Glucosa;
 import com.glucoapp.data.entities.User;
-import com.glucoapp.data.repositories.firebase.ListenerUser;
-import com.glucoapp.data.repositories.firebase.ListenerGlucosa;
+import com.glucoapp.data.listeners.ListenerUser;
+import com.glucoapp.data.listeners.ListenerGlucosa;
 
 import java.util.ArrayList;
 

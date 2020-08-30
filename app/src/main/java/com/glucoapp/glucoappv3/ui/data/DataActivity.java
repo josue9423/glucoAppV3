@@ -45,7 +45,6 @@ public class DataActivity extends AppCompatActivity implements Data.View{
 
     AnimationSet animationSet;
     TranslateAnimation translateDownAnimation;
-    TranslateAnimation translateUpAnimation; /* No se usa por el momento */
 
     Glucosa glucosa = new Glucosa();
 
@@ -79,7 +78,6 @@ public class DataActivity extends AppCompatActivity implements Data.View{
         translateDownAnimation = new TranslateAnimation(0f, 0f, 0f, 50.5f);
         translateDownAnimation.setDuration(800);
         translateDownAnimation.setRepeatCount(TranslateAnimation.INFINITE);
-
         animationSet.addAnimation(translateDownAnimation);
     }
     private void onClickBtnGluco(){
@@ -110,7 +108,24 @@ public class DataActivity extends AppCompatActivity implements Data.View{
         if(pos > Constants.CERO_VALUE) presenter.connectDevice((String) spinner.getAdapter().getItem(pos));
     }
 
-    /* Implementación de métodos */
+    /* Bluetooth */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case Constants.REQUEST_ENABLED_BT:
+                if (resultCode == RESULT_OK) {
+                    presenter.setListBtDevices(this);
+                } else {
+                    Toast.makeText(DataActivity.this, Constants.DONT_USE_BT_ERROR, Toast.LENGTH_LONG).show();
+                    Intent homeIntent = new Intent(DataActivity.this, HomeActivity.class);
+                    startActivity(homeIntent);
+                    finish();
+                }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    /* Implementación de métodos de interface*/
     @Override
     public void showLoading() {
         progressBar.setVisibility(View.VISIBLE);
@@ -192,19 +207,4 @@ public class DataActivity extends AppCompatActivity implements Data.View{
         finish();
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case Constants.REQUEST_ENABLED_BT:
-                if (resultCode == RESULT_OK) {
-                    presenter.setListBtDevices(this);
-                } else {
-                    Toast.makeText(DataActivity.this, Constants.DONT_USE_BT_ERROR, Toast.LENGTH_LONG).show();
-                    Intent homeIntent = new Intent(DataActivity.this, HomeActivity.class);
-                    startActivity(homeIntent);
-                    finish();
-                }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 }

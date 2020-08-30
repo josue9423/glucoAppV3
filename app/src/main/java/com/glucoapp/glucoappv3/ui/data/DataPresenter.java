@@ -51,14 +51,15 @@ public class DataPresenter extends BasePresenter implements Data.Presenter {
             bluetoothDevicesList.add(context.getString(R.string.conecta));
             if (bluetoothDevices.size() > Constants.CERO_VALUE) {
                 for (BluetoothDevice bluetoothDevice : bluetoothDevices) {
-                    bluetoothDevicesMap.put(bluetoothDevice.getName(), bluetoothDevice.getAddress());
-                    bluetoothDevicesList.add(bluetoothDevice.getName());
+                    /*if(bluetoothDevice.getName().equals(Constants.BLUETOOTH_NAME)){*/
+                        bluetoothDevicesMap.put(bluetoothDevice.getName(), bluetoothDevice.getAddress());
+                        bluetoothDevicesList.add(bluetoothDevice.getName());
+                  /*  }*/
                 }
                 view.setListBtDevices(bluetoothDevicesList);
             } else {
                 view.btNotPairedDevices();
             }
-
         }
     }
 

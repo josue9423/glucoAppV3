@@ -2,7 +2,6 @@ package com.glucoapp.domain.usecases;
 
 import com.glucoapp.data.entities.Glucosa;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 
 public interface GlucosaUseCase {

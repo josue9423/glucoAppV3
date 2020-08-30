@@ -1,4 +1,4 @@
-package com.glucoapp.data.repositories.firebase;
+package com.glucoapp.data.listeners;
 
 import com.glucoapp.data.entities.User;
 

@@ -5,7 +5,7 @@ import com.glucoapp.data.repositories.firebase.Authentication;
 import com.glucoapp.data.repositories.firebase.Datastore;
 import com.glucoapp.data.repositories.firebase.Impl.AuthenticationImpl;
 import com.glucoapp.data.repositories.firebase.Impl.DatastoreImpl;
-import com.glucoapp.data.repositories.firebase.ListenerUser;
+import com.glucoapp.data.listeners.ListenerUser;
 import com.glucoapp.domain.usecases.UserUseCase;
 
 public class UserUseCaseImpl implements UserUseCase, ListenerUser {

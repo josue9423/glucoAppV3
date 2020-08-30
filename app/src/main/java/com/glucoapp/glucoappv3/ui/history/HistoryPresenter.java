@@ -1,7 +1,5 @@
 package com.glucoapp.glucoappv3.ui.history;
 
-import android.widget.ArrayAdapter;
-
 import com.github.mikephil.charting.data.Entry;
 import com.glucoapp.data.entities.Glucosa;
 import com.glucoapp.domain.usecases.GlucosaUseCase;

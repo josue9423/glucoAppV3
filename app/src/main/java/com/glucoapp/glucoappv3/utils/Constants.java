@@ -16,6 +16,8 @@ public final class Constants {
     public static final long SPLASH_SCREEN_TIMER = 2500;
     public static final int DIABETES_RANGE_VALUE = 140;
 
+    public static final String BLUETOOTH_NAME = "GlucoHW";
+
     public static final String UNIDAD_MEDIDA ="mmol/L";
 
     public static final String FORMAT_DATE = "dd/MM/yy";

@@ -4,10 +4,10 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import com.glucoapp.data.entities.Glucosa;
 import com.glucoapp.data.repositories.firebase.Datastore;
 import com.glucoapp.data.repositories.firebase.Impl.DatastoreImpl;
-import com.glucoapp.data.repositories.firebase.ListenerGlucosa;
+import com.glucoapp.data.entities.Glucosa;
+import com.glucoapp.data.listeners.ListenerGlucosa;
 import com.glucoapp.data.utils.Constants;
 import com.glucoapp.domain.usecases.GlucosaUseCase;
 
@@ -17,7 +17,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 

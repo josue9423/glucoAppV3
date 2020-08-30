@@ -13,14 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.history.HistoryActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:parentActivityName=".ui.login.LoginActivity">
-        </activity>
+        <activity android:name=".ui.map.MapActivity"></activity>
+        <activity
+            android:name=".ui.history.HistoryActivity"
+            android:parentActivityName=".ui.login.LoginActivity"
+            android:theme="@style/AppThemeNoActionBar"></activity>
         <activity
             android:name=".ui.data.DataActivity"
             android:parentActivityName=".ui.login.LoginActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity android:name=".ui.BaseActivity" />
         <activity
             android:name=".ui.splash.SplashActivity"
