@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.glucoapp.glucoappv3.R;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
@@ -66,6 +68,11 @@ public class Utils {
         }
         return dateFormat.format(date);
 
+    }
+
+    public static String getDateTime(){
+            return LocalDateTime.now()
+                    .format(DateTimeFormatter.ofPattern(Constants.FORMAT_DATE_FIREBASE));
     }
 
 }

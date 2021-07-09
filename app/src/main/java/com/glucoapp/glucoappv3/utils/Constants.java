@@ -21,6 +21,7 @@ public final class Constants {
     public static final String UNIDAD_MEDIDA ="mmol/L";
 
     public static final String FORMAT_DATE = "dd/MM/yy";
+    public static final String FORMAT_DATE_FIREBASE = "dd/MM/yy hh:mm:ss";
 
     public static final String ESPACIO = " ";
     public static final String MY_USER = "myUser";

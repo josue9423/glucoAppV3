@@ -22,6 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class DatastoreImpl implements Datastore {
 
@@ -85,7 +86,7 @@ public class DatastoreImpl implements Datastore {
     public void saveGlucoData(Glucosa glucosa) {
         Authentication authentication = new AuthenticationImpl();
         String uid = authentication.isExistingUser();
-        String document = glucosa.getFecha();
+        String document = UUID.randomUUID().toString();
         mFirebase.collection(Constants.COLECTION_USER).document(uid).collection(Constants.COLECTION_DATA).document(document).set(glucosa).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

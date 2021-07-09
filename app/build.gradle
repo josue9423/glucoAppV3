@@ -9,7 +9,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.glucoapp.glucoappv3"
-        minSdkVersion 24
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -34,11 +34,13 @@ dependencies {
     implementation 'com.jakewharton:butterknife:10.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
-    implementation group: 'com.google.dagger', name: 'dagger-android', version: '2.22.1'
+    implementation group: 'com.google.dagger', name: 'dagger-android', version: '2.35.1'
     implementation group: 'com.google.dagger', name: 'dagger-android-support', version: '2.22.1'
 
     implementation 'com.github.devlight.pulseview:library:1.0.2'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    implementation 'com.google.code.gson:gson:2.8.7'
 
     implementation project(path: ':domain')
     implementation project(path: ':data')

@@ -18,6 +18,7 @@ import com.glucoapp.glucoappv3.interfaces.Home;
 import com.glucoapp.glucoappv3.ui.data.DataActivity;
 import com.glucoapp.glucoappv3.ui.history.HistoryActivity;
 import com.glucoapp.glucoappv3.ui.login.LoginActivity;
+import com.glucoapp.glucoappv3.ui.map.MapsActivity;
 import com.glucoapp.glucoappv3.ui.register.RegisterActivity;
 import com.glucoapp.glucoappv3.utils.Constants;
 
@@ -76,7 +77,10 @@ public class HomeActivity extends AppCompatActivity implements Home.View {
         Intent intentHistory = new Intent(HomeActivity.this, HistoryActivity.class);
         startActivity(intentHistory);
     }
-    private void goToMap(){}
+    private void goToMap(){
+        Intent intentMap = new Intent(HomeActivity.this, MapsActivity.class);
+        startActivity(intentMap);
+    }
 
     @OnClick ({R.id.btn_add, R.id.btn_history, R.id.btn_map})
     public void onClick(View view){
